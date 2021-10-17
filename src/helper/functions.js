@@ -4,4 +4,4 @@
  * @param {string} key
  * @returns {Object}
  */
-export const findBy = (arr, criteria = "id", key) => arr.find(elem => elem[criteria] === key)
+export const findBy = (arr, key , criteria = "id") => arr.find(elem => elem[criteria] === key)

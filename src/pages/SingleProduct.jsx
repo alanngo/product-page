@@ -5,7 +5,7 @@ import {findBy} from "../helper/functions"
 const SingleProduct = ({products}) => 
 {
     const {productId} = useParams()
-    const product = findBy(products, "id", Number(productId))
+    const product = findBy(products, Number(productId))
     return (
         <div className='SingleProduct'>
         <h3>Name: {product.name}</h3>
