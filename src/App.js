@@ -1,25 +1,21 @@
-import logo from './logo.svg';
+import {Switch, BrowserRouter as Router, Route} from "react-router-dom"
+import Products from "./pages/Products"
+import SingleProduct from './pages/SingleProduct';
 import './App.css';
+import Root from './pages/Root';
+import { pcProducts } from "./helper/constants";
+const App = () => 
+(
+  <div className="App">
+   <Router>
+     <Switch>
+       <Route path="/products" component = {() => <Products products={pcProducts}/>}/>
+       <Route path="/product/:productId" component = {() =><SingleProduct products={pcProducts}/>}/>
+      <Route path="/" component={Root}/>
+     </Switch>
+   </Router>
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  </div>
+);
 
 export default App;
